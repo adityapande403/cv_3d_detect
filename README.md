@@ -3,13 +3,13 @@
 **Real-time computer vision system for detecting defects in FFF/FDM 3D printing** — built to minimize material waste and failed prints through automated quality control.
 
 ![3D Printing in Action](https://media.giphy.com/media/BINkTZl70NCv0QpdgU/giphy.gif)  
-
+*Example of 3D printer layer-by-layer operation*
 
 ---
 
 ## 🎯 Overview
 
-Developed a production-grade layer-by-layer defect detection system using **YOLOv5**. The model identifies common 3D printing defects (stringing, warping, under-extrusion, blobs, etc.) in real-time and is optimized for **edge deployment on Raspberry Pi**.
+Developed a production-grade layer-by-layer defect detection system using **YOLOv5**. Identifies common defects (stringing, warping, under-extrusion, blobs, etc.) in real-time. Optimized for **edge deployment on Raspberry Pi**.
 
 **Key Achievements**:
 - **>90% detection accuracy** across defect categories
@@ -20,36 +20,26 @@ Developed a production-grade layer-by-layer defect detection system using **YOLO
 ---
 
 ## ✨ Features
-
 - Fine-tuned YOLOv5 with data augmentation and hard-negative mining
-- Configuration-driven training and inference pipeline
-- Ready for edge deployment (TensorFlow Lite / ONNX)
-- Clean, modular codebase with proper documentation
-- Reproducible setup for both development and production
+- Configuration-driven training & inference
+- Ready for TensorFlow Lite / ONNX export
+- Clean, modular, and well-documented codebase
 
 ---
 
 ## 🛠️ Tech Stack
-
 - **Core**: Python, PyTorch, Ultralytics YOLOv5
-- **Computer Vision**: OpenCV
+- **CV**: OpenCV
 - **Deployment**: TensorFlow Lite, Raspberry Pi
-- **Configuration**: PyYAML
-- **Visualization**: Matplotlib, Seaborn
+- **Config**: PyYAML
 
 ---
 
 ## 📁 Project Structure
-
 ```bash
-3D_Detect/
-├── src/              # Main source code (train, infer, utils)
-├── configs/          # config.yaml
-├── data/             # Dataset and annotations
-├── models/           # Trained weights and exported models
-├── yolov5/           # YOLOv5 vendor directory
-├── scripts/          # Helper scripts
-├── docs/             # Results, images, reports
+├── src/           # Training, inference, utils
+├── scripts/       # Helper scripts
+├── config.yaml
 ├── requirements.txt
 ├── .gitignore
 ├── LICENSE
