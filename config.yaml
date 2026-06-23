@@ -1,0 +1,18 @@
+paths:
+  yolov5_repo: "yolov5"
+  dataset: "Dataset"
+  save_dir: "models"
+  weights: "yolov5s.pt"   # or yolov5x.pt
+
+training:
+  img_size: 640
+  batch_size: 16
+  epochs: 100
+  data: "Dataset/dataset.yaml"
+  cfg: "models/yolov5x.yaml"
+  name: "yolov5_model"
+
+inference:
+  confidence: 0.5
+  iou: 0.45
+  device: "cpu"   # or "cuda"

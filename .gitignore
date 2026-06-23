@@ -1,0 +1,25 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Data & Models
+Dataset/
+models/
+*.pt
+*.pth
+runs/
+
+# OS
+.DS_Store
+*.swp
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
