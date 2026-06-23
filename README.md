@@ -3,7 +3,7 @@
 **Real-time computer vision system for detecting defects in FFF/FDM 3D printing** — built to minimize material waste and failed prints through automated quality control.
 
 ![3D Printing in Action](https://media.giphy.com/media/BINkTZl70NCv0QpdgU/giphy.gif)  
-*Time-lapse of a 3D printer in operation (replace with your own defect detection demo later)*
+
 
 ---
 
