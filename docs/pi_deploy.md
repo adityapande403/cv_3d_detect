@@ -8,11 +8,17 @@ real-time 3D printing defect detection on a Raspberry Pi (ARM) device.
 - Reduce image size (`--img 320` or `416`) for faster inference if acceptable for accuracy.
 
 ## 2. Export to ONNX (recommended)
-- From the YOLOv5 repository, use the upstream `export.py` for reliable ONNX export.
+- Use this repository's export CLI for a consistent edge export workflow.
 - Example (on a workstation with GPU):
 
 ```bash
-python export.py --weights models/yolov5s.pt --img 640 --batch 1 --device cpu --include onnx
+python src/export_cli.py \
+  --weights models/yolov5s.pt \
+  --output-dir models/exported \
+  --img 640 \
+  --batch 1 \
+  --include onnx \
+  --quantize-onnx
 ```
 
 - Verify ONNX with `onnx.checker.check_model(model)` and test inference with `onnxruntime`.

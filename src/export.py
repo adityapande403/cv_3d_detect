@@ -116,6 +116,30 @@ def quantize_dynamic_torchscript(ts_model_path: Path, out_path: Path) -> None:
         raise
 
 
+def quantize_onnx_dynamic(onnx_model_path: Path, out_path: Path) -> None:
+    """Apply ONNX dynamic quantization to an exported ONNX model."""
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        logging.info("Quantizing ONNX model: %s", onnx_model_path)
+        import onnxruntime
+        from onnxruntime.quantization import quantize_dynamic, QuantType
+
+        quantize_dynamic(
+            model_input=str(onnx_model_path),
+            model_output=str(out_path),
+            quant_format=QuantType.QOperator,
+            weight_type=QuantType.QInt8,
+            optimize_model=True,
+        )
+        logging.info("Quantized ONNX model saved to %s", out_path)
+    except ImportError as e:
+        logging.error("onnxruntime is required for ONNX quantization: %s", e)
+        raise
+    except Exception as e:
+        logging.exception("ONNX quantization failed: %s", e)
+        raise
+
+
 # Guidance helpers
 RASPBERRY_PI_NOTES = """
 Raspberry Pi Deployment Notes

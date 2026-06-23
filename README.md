@@ -37,10 +37,26 @@ Developed a production-grade layer-by-layer defect detection system using **YOLO
 
 ## 📁 Project Structure
 ```bash
-├── src/           # Training, inference, utils
+├── src/           # Training, inference, export, utils
 ├── scripts/       # Helper scripts
 ├── config.yaml
 ├── requirements.txt
 ├── .gitignore
 ├── LICENSE
 └── README.md
+```
+
+## 🚀 Export CLI
+Use the built-in export CLI to create TorchScript and ONNX artifacts for edge deployment.
+
+```bash
+python src/export_cli.py \
+  --weights models/yolov5s.pt \
+  --output-dir models/exported \
+  --img 640 \
+  --batch 1 \
+  --include both \
+  --quantize-onnx
+```
+
+The CLI supports `--include torchscript`, `--include onnx`, and `--include both`, plus optional quantization flags.
